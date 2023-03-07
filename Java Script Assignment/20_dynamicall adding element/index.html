@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add List Item Html Web page</title>
+    <style>
+        body {
+            background-color: #6362625d;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 97vh;
+            width: 100%;
+        }
+
+        .box {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        ul li {
+            font-size: 25px;
+            list-style: none;
+            color: black;
+            font-weight: 500;
+            padding: 6px 0;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+            font-weight: 500;
+            font-family: sans-serif;
+            cursor: pointer;
+            letter-spacing: 3px;
+        }
+
+        .btn:hover {
+            background-color: rgba(0, 0, 0, 0.918);
+            border-radius: 3px solid rgba(0, 0, 0, 0.918);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <ul id="ul"></ul>
+            <button class="btn" id="btn">Add</button>
+        </div>
+    </div>
+
+    <script>
+        let parentElement = document.getElementById("ul")
+        let addBtn = document.getElementById("btn")
+
+        
+        const listItems = ["item 1", "item 2", "item 3", "item 4"]
+        let currentIndex = 0;
+
+        // Create element function
+        function addElement(item) {
+            const listItem = document.createElement("li")
+
+            if(currentIndex < listItems.length ){
+                listItem.innerText = listItems[currentIndex]
+                currentIndex++
+                parentElement.appendChild(listItem)
+            }
+            else{
+                alert("Full Element")
+            }
+        }
+
+        addBtn.addEventListener("click", (e) => {
+            e.preventDefault()
+            addElement(listItems)
+        })
+
+    </script>
+</body>
+
+</html>

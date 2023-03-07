@@ -1,0 +1,103 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.bio-progress-bar{
+    position: relative;
+    background-color: antiquewhite;
+    width: 700px;
+    height: .8rem;
+    border-radius: 10rem;
+    transition: all .5s ease;
+}
+
+.bio-progress-bar::before{
+    content: "";
+    top: 0;
+    position: absolute;
+    left: 0;
+    width: 60%;
+    height: inherit;
+    background:linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    border-radius: 10rem;
+}
+
+.bio-stats{
+    padding: 10px 0;
+}
+
+.bio-stats h3{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.bio-progress-bar span::after{
+    content: "";
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border: 0.8rem solid  rgb(5, 82, 112);
+    border-color: transparent;
+    border-bottom-color: rgb(75, 177, 218);
+    top: -1.5rem;
+    left: 1.2rem;
+}
+
+.bio-progress-bar span{
+    position: relative;
+    top: 1.8rem;
+    width: 4rem;
+    height: 2rem;
+    background: linear-gradient(0deg, rgb(132 144 255) 0%, rgb(98 189 252) 100%);
+    color: white;
+    display: flex;
+    border-radius: 0.2rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.bio-progress-1::before{
+    width: 70%;
+}
+
+.bio-progress-2::before{
+    width: 80%;
+}
+
+.bio-progress-3::before{
+    width: 60%;
+}
+
+.bio-progress-4::before{
+    width: 50%;
+}
+
+.bio-progress-5::before{
+    width: 80%;
+}
+
+
+.bio-progress-1 span{
+    left: 28.5rem;
+}
+
+.bio-progress-2 span{
+    left: 32.9rem;
+}
+
+.bio-progress-3 span{
+    left: 24.2rem;
+}
+
+.bio-progress-4 span{
+    left: 19.9rem;
+}
+
+.bio-progress-5 span{
+    left: 32.9rem;
+}

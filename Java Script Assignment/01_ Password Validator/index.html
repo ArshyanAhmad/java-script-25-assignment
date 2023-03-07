@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwrod Validator in JavaScript - Assignment</title>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: blue;
+            font-size: 50px;
+            font-weight: 500;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="heading">Welcome in Password Validator Program</h1>
+
+    <script>
+        // Pass word validator
+        const Passwrod = "abc@password"
+        const userPassword = prompt("Enter Your Password ")
+
+        try {
+            if (userPassword !== "") {
+                const passwordValidator = () => {
+                    if ((userPassword.toLowerCase()) == Passwrod) {
+                        console.log("Your Password is:", userPassword.toLowerCase())
+                        heading.innerText = "Your Password is matched! 🙂"
+                        console.log("Your Password is matched! 🙂")
+                    }
+                    else if ((userPassword.toLowerCase()) != Passwrod) {
+                        console.log("Your Password is:", userPassword.toLowerCase())
+                        heading.innerText = "Your Password is didn't match! 😓"
+                        console.log("Your Password is didn't match! 😓")
+                        console.log("Right Password is:", Passwrod)
+                    }
+                }
+                passwordValidator()
+            }
+            else {
+                console.log("Your Password is Invalid")
+            }
+        }
+        catch (e) {
+            console.log("Enter Your Password!")
+        }
+    </script>
+</body>
+
+</html>

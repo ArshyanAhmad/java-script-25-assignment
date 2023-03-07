@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill split</title>
+</head>
+
+<body>
+
+
+    <script>
+        function splitBill(costs, noOfPeople){
+            let totalCost = 0;
+            let billSplit = {}
+            for(let i = 0; i < costs.length; i++){
+                totalCost += costs[i];
+            }
+
+            let perPerson = totalCost / noOfPeople
+
+            for(let i = 0; i < costs.length; i++){
+                cost = costs[i]
+                split = costs[i] / noOfPeople
+                console.log(` ${cost} Rupees split in ${noOfPeople} peopele Moneey is ${split}`)
+            }
+            return {totalCost, perPerson}
+        }
+        const costs = [20, 15, 30, 10];
+        const numPeople = 4
+        const ans = splitBill(costs, numPeople)
+        console.log(ans)
+    </script>
+</body>
+
+</html>

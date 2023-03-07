@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlighted text color</title>
+
+    <style>
+        body {
+            background-color: #222;
+        }
+
+        .container {
+            width: 60%;
+            padding: 20px 30px;
+            border-radius: 20px;
+            border: 1px solid #fff;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            background-color: black;
+            box-shadow: 0px 0 4px #fff;
+            color: white;
+
+        }
+
+        .box p {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: sans-serif;
+            padding: 10px;
+            word-spacing: 7px;
+            line-height: 2
+        }
+
+        .btn {
+            padding: 13px 20px;
+            font-size: 17px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            font-weight: 600;
+            transition: all .2s linear;
+            border-radius: 5px;
+        }
+        
+        .btn:hover {
+            box-shadow: 0px 0px 2px #fff;
+            background-color: #000;
+            color: white;
+            cursor: pointer;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, possimus totam praesentium delectus vel
+                asperiores id dicta, et vero repellat eum modi accusantium eius quasi, placeat reiciendis dolorum.
+                Tenetur voluptatum praesentium possimus laboriosam modi velit, recusandae quod facilis pariatur omnis!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum accusamus error provident eligendi
+                aliquid est velit, quae eum optio voluptates odit ad quas tenetur deserunt maiores ea sint! Recusandae,
+                laudantium.</p>
+        </div>
+        <div class="center">
+            <button class="btn">Highlight</button>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector(".btn")
+        let allText = document.querySelector(".box p")
+
+        // Split the word 
+        let words = allText.textContent.split(" ")
+
+        // iterate the word in words 
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > 8) {
+                    words[i] = "<span style='color : yellow '>" + words[i] + "</span>"
+                }
+            }
+
+        // Add Event listener to hightlight the text
+        button.addEventListener("click", () => {
+            allText.innerHTML = words.join(" ")
+        })
+
+    </script>
+</body>
+
+</html>

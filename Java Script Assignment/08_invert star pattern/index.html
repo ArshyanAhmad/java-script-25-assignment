@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern in Java Script</title>
+</head>
+
+<body>
+
+
+    <script>
+        let n = 6;
+        let pattern = "";
+        for (let i = 0; i < n; i++) {
+            // printing star
+            for (let k = 0; k < n - i; k++) {
+                pattern += "*";
+            }
+            pattern += "\n";
+        }
+        console.log(pattern);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Todo App Assignment by Pw Skills </title>
+</head>
+<body>
+    <div class="container">
+        <div class="task">
+            <input type="text" placeholder="Write your todo here..">
+            <button id="btn" class="Add">Add</button>
+        </div>
+        <div id="tasks" class="tasks"></div>
+    </div>
+
+    <script>
+        let textInput = document.querySelector(".task input")
+        let add = document.getElementById("btn")
+        let addTask = document.getElementById("tasks")
+
+        add.addEventListener("click", ()=>{
+            if(textInput.value.length == 0 ){
+                alert("Please enter a task..")
+            }
+            else{
+                addTask.innerHTML += `
+                <div class="showTask">
+                <span id="taskName">
+                ${textInput.value}
+                </span>
+                <button class="delete">Delete</button>
+                </div>
+                `
+                var deleteBtn = document.querySelectorAll(".delete")
+                for(var i = 0; i < deleteBtn.length; i++){
+                    deleteBtn[i].onclick = function(){
+                        this.parentNode.remove()
+                        textInput.value = ""
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
